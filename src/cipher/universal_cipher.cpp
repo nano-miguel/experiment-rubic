@@ -352,7 +352,6 @@ bool PersistCounter::save_to_file_internal() {
         
         dirty = false;
         success = true;
-        
     } catch (const std::exception& e) {}
     
     is_saving = false;
@@ -519,7 +518,6 @@ std::string NameObfus::obfuscate_name(const std::string& original_name) {
         }
         
         return result;
-        
     } catch (const std::exception& e) {
         return "file_" + std::to_string(SecureRandom::random_uint64()) + ".enc";
     }
