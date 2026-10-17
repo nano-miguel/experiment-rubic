@@ -70,7 +70,6 @@ Botan::secure_vector<uint8_t> KeyCryptoUtils::deriveKey(
                           salt.data(), salt.size());
         
         return key;
-        
     } catch(...) {
         return Botan::secure_vector<uint8_t>();
     }
@@ -110,7 +109,6 @@ Botan::secure_vector<uint8_t> KeyCryptoUtils::encryptData(
         result.insert(result.end(), ct.begin(), ct.end());
         
         return result;
-        
     } catch(...) {
         return Botan::secure_vector<uint8_t>();
     }
@@ -145,7 +143,6 @@ Botan::secure_vector<uint8_t> KeyCryptoUtils::decryptData(
         cipher->finish(pt);
         
         return pt;
-        
     } catch(...) {
         return Botan::secure_vector<uint8_t>();
     }
@@ -437,7 +434,6 @@ bool KeyManager::saveKeysToFile() {
         setSecureFilePermissions(keysFile);
         
         return true;
-        
     } catch(...) {
         return false;
     }
@@ -512,7 +508,6 @@ bool KeyManager::loadKeysFromFile() {
         }
         
         return true;
-        
     } catch(...) {
         return false;
     }
