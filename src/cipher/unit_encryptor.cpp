@@ -593,7 +593,6 @@ std::vector<StorUnit> UnitEncryptor::detectUnits() {
         while ((ent = getmntent(mounts))) {
             std::string dev = ent->mnt_fsname;
             if (dev.find("/dev/") == 0 && isPhysicalDevice(dev)) {
-                
                 StorUnit u;
                 u.device_path = dev;
                 u.mount_point = ent->mnt_dir;
@@ -644,7 +643,6 @@ std::vector<StorUnit> UnitEncryptor::detectUnits() {
             
             if ((name.find("sd") == 0 || name.find("hd") == 0 || name.find("nvme") == 0 || name.find("mmcblk") == 0) &&
                 !seen_devices.count(dev) && isPhysicalDevice(dev)) {
-                
                 bool is_part = (name.find_first_of("0123456789") != std::string::npos);
                 std::string parent = getParentDevice(dev);
                 
