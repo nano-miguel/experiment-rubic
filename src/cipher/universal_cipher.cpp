@@ -299,7 +299,6 @@ void PersistCounter::load_from_file() {
             
             counters[name] = counter;
         }
-        
     } catch (const std::exception& e) {}
 }
 
@@ -940,7 +939,6 @@ bool AES256GCM::process_single_file_with_retry(const std::string& inputPath,
             } else {
                 success = process_with_traditional_io(inputPath, outputPath, encryptMode);
             }
-            
         } catch (const std::exception& e) {
             success = false;
         }
