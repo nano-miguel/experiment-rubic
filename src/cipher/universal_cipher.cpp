@@ -321,7 +321,6 @@ void PersistCounter::load_from_file() {
             
             counters[name] = counter;
         }
-        
     } catch (const std::exception& e) {
         std::cerr << "Error loading counters: " << e.what() << '\n';
     }
@@ -376,7 +375,6 @@ bool PersistCounter::save_to_file_internal() {
         
         dirty = false;
         success = true;
-        
     } catch (const std::exception& e) {
         std::cerr << "Error saving counters: " << e.what() << '\n';
     }
@@ -545,7 +543,6 @@ std::string NameObfus::obfuscate_name(const std::string& original_name) {
         }
         
         return result;
-        
     } catch (const std::exception& e) {
         return "file_" + std::to_string(SecureRandom::random_uint64()) + ".enc";
     }
@@ -596,8 +593,7 @@ std::string NameObfus::deobfuscate_name(const std::string& obfuscated_name) {
             name_cache[idx]->hits = 1;
         }
         
-        return original_name;
-        
+        return original_name;   
     } catch (const std::exception& e) {
         return "restored_" + obfuscated_name;
     }
